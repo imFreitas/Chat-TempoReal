@@ -14,12 +14,6 @@
  
   ### Com apenas o seu nome e sobrenome, você consegue ingressar no chat, de uma forma simples e rápida.
  <img src="https://media.discordapp.net/attachments/1052029956865151072/1054470417978499173/image.png?width=1668&height=656"><br>
- 
-
-<div align="center">
-<h2>Vídeo de demonstração </h2>
-
-</div>
 
 
 
