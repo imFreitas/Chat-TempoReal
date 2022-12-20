@@ -3,16 +3,18 @@ body {
     margin-top: 20px;
     font-family: sans-serif
 }
-.h1{
+
+.h1 {
     text-shadow: black 0.1em 0.1em 0.2em
 }
-.h4{
+
+.h4 {
     color: #a9c3ff;
     font-weight: 400;
     text-shadow: black 0.1em 0.1em 0.2em
-
 }
-img{
+
+img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -192,7 +194,6 @@ body ::-webkit-scrollbar {
     content: " ";
     height: 0;
     width: 0;
-    position: absolute;
     pointer-events: none;
     border-bottom-color: #fff;
     border-width: 10px;
@@ -206,7 +207,7 @@ body ::-webkit-scrollbar {
     position: relative;
     padding-left: 15px;
     padding-top: 2.5px;
-    position: absolute;
+    max-width: 100%;
 
 }
 
@@ -238,9 +239,7 @@ body ::-webkit-scrollbar {
     padding: 20px
 }
 
-.online,
-.offline,
-.me {
+.online, .offline, .me {
     margin-right: 2px;
     font-size: 15px;
     vertical-align: middle

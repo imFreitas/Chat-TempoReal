@@ -3,7 +3,7 @@ const moment = require('moment');
 moment.locale('pt-br');
 
 function usuarioEntrarSala(id, nome, sala, meuid) {
-    const usuario = {id, nome, sala, meuid};
+    const usuario = { id, nome, sala, meuid };
     usuarios.push(usuario);
     return usuario;
 }
@@ -11,14 +11,14 @@ function usuarioEntrarSala(id, nome, sala, meuid) {
 function usuarioSairSala(id) {
     const index = usuarios.findIndex(usuario => usuario.id === id);
 
-    if (index !== -1){
+    if (index !== -1) {
         return usuarios.splice(index, 1)[0];
     }
 }
 
 function mensagemFormatada(usuarioNome, mensagemParam, meuid) {
 
-    var mensagem = mensagemParam ? mensagemParam : "Entrou na sala";
+    var mensagem = mensagemParam ? mensagemParam : "Está na sala";
 
     return {
         usuarioNome,

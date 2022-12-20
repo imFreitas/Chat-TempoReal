@@ -9,19 +9,18 @@ const server = http.createServer(app);
 const PORT = 3000;
 const io = socketIO(server);
 
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 const nomeSala = "Chat em Tempo Real"
 
 /*Socket.IO*/
 io.on("connection", socket => {
-    socket.on('entrarSala', ({usuarionome, meuid}) => {
+    socket.on('entrarSala', ({ usuarionome, meuid }) => {
         const usuario = usuarioEntrarSala(socket.id, usuarionome, nomeSala, meuid);
         socket.join(nomeSala);
-        
+
         socket.broadcast.to(nomeSala).emit('novaMensagem', mensagemFormatada(usuario.nome));
-        io.to(usuario.sala).emit("salaUsuarios", {sala: usuario.sala, usuarios: getUsuariosSala()});
+        io.to(usuario.sala).emit("salaUsuarios", { sala: usuario.sala, usuarios: getUsuariosSala() });
     });
 
     socket.on('mensagemChat', mensagem => {
@@ -33,7 +32,7 @@ io.on("connection", socket => {
         const usuario = usuarioSairSala(socket.id);
         if (usuario) {
             io.to(nomeSala).emit('novaMensagem', mensagemFormatada(usuario.nome, 'Saiu da sala', usuario.id));
-            io.to(nomeSala).emit('salaUsuarios', {sala: usuario.sala, usuarios: getUsuariosSala() });
+            io.to(nomeSala).emit('salaUsuarios', { sala: usuario.sala, usuarios: getUsuariosSala() });
         }
     });
 });
