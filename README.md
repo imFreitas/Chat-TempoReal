@@ -1,4 +1,3 @@
-# (Ainda em desenvolvimento)
 <div align="center">
 <br>
 <h1>Chat em Tempo Real</h1>
